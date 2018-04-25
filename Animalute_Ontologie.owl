@@ -1,0 +1,2053 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY animale-compoanie "http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/simona/ontologies/2018/2/untitled-ontology-5#"
+     xml:base="http://www.semanticweb.org/simona/ontologies/2018/2/untitled-ontology-5"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:animale-compoanie="http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#">
+    <owl:Ontology rdf:about="http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#unitateDeMasura -->
+
+    <owl:AnnotationProperty rdf:about="&animale-compoanie;unitateDeMasura"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#aCastigat -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;aCastigat">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Concurs"/>
+        <owl:inverseOf rdf:resource="&animale-compoanie;esteCastigatDe"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#adaposteste -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;adaposteste">
+        <rdfs:domain rdf:resource="&animale-compoanie;Adapost"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#esteAdapostitIn -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;esteAdapostitIn">
+        <rdfs:range rdf:resource="&animale-compoanie;Adapost"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <owl:inverseOf rdf:resource="&animale-compoanie;adaposteste"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#esteCastigatDe -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;esteCastigatDe">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Concurs"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#esteConsumataDe -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;esteConsumataDe">
+        <rdfs:range rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Hrana"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#esteIngredientPentru -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;esteIngredientPentru">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Ingredient"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Hrana"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Ingredient"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#esteVandutDe -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;esteVandutDe">
+        <rdfs:range rdf:resource="&animale-compoanie;Magazin"/>
+        <owl:inverseOf rdf:resource="&animale-compoanie;vinde"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Animal"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Hrana"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#gazduieste -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;gazduieste">
+        <rdfs:range rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Eveniment"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#participaLa -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;participaLa">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <owl:inverseOf rdf:resource="&animale-compoanie;gazduieste"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#participaLaConcurs -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;participaLaConcurs">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Concurs"/>
+        <rdfs:subPropertyOf rdf:resource="&animale-compoanie;participaLa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#participaLaExpozitie -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;participaLaExpozitie">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Expozitie"/>
+        <rdfs:subPropertyOf rdf:resource="&animale-compoanie;participaLa"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#provineDin -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;provineDin">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Tara"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#seHranesteCu -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;seHranesteCu">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Hrana"/>
+        <owl:inverseOf rdf:resource="&animale-compoanie;esteConsumataDe"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#seTemeDe -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;seTemeDe">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#traiesteInMediul -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;traiesteInMediul">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&animale-compoanie;MediuDeViata"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#vinde -->
+
+    <owl:ObjectProperty rdf:about="&animale-compoanie;vinde">
+        <rdfs:domain rdf:resource="&animale-compoanie;Magazin"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Animal"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Hrana"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#animal_durataDeViata -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;animal_durataDeViata">
+        <animale-compoanie:unitateDeMasura rdf:datatype="&xsd;string">Ani</animale-compoanie:unitateDeMasura>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#animal_greutateMedie -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;animal_greutateMedie">
+        <animale-compoanie:unitateDeMasura rdf:datatype="&xsd;string">Kilograme</animale-compoanie:unitateDeMasura>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#animal_inaltimeMedie -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;animal_inaltimeMedie">
+        <animale-compoanie:unitateDeMasura rdf:datatype="&xsd;string">Metrii</animale-compoanie:unitateDeMasura>
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&xsd;float"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#animal_numarPicioare -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;animal_numarPicioare">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#animal_numeStiintific -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;animal_numeStiintific">
+        <rdfs:domain rdf:resource="&animale-compoanie;Animal"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#centruAnimale_adresa -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;centruAnimale_adresa">
+        <rdfs:domain rdf:resource="&animale-compoanie;CentruAnimale"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#concurs_tip -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;concurs_tip">
+        <rdfs:domain rdf:resource="&animale-compoanie;Concurs"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>Abilitati</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>Dresaj</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>Frumusete</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#eveniment_data -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;eveniment_data">
+        <rdfs:domain rdf:resource="&animale-compoanie;Eveniment"/>
+        <rdfs:range rdf:resource="&xsd;dateTimeStamp"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#eveniment_locatie -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;eveniment_locatie">
+        <rdfs:domain rdf:resource="&animale-compoanie;Eveniment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#hrana_aroma -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;hrana_aroma">
+        <rdfs:domain rdf:resource="&animale-compoanie;Hrana"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>Bacon</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>Cartofi</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>Cereale</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first>Fructe</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first>Orez</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first>Pasare</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                        <rdf:first>Peste</rdf:first>
+                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#hrana_tipAmbalaj -->
+
+    <owl:DatatypeProperty rdf:about="&animale-compoanie;hrana_tipAmbalaj">
+        <rdfs:domain rdf:resource="&animale-compoanie;Hrana"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>Conserva</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>Cutie</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>Plic</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first>Sac</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Acvatic -->
+
+    <owl:Class rdf:about="&animale-compoanie;Acvatic">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;MediuDeViata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost -->
+
+    <owl:Class rdf:about="&animale-compoanie;Adapost">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;CentruAnimale"/>
+        <owl:disjointWith rdf:resource="&animale-compoanie;Magazin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Aerian -->
+
+    <owl:Class rdf:about="&animale-compoanie;Aerian">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;MediuDeViata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal -->
+
+    <owl:Class rdf:about="&animale-compoanie;Animal"/>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Bio -->
+
+    <owl:Class rdf:about="&animale-compoanie;Bio">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#BogataInProteine -->
+
+    <owl:Class rdf:about="&animale-compoanie;BogataInProteine">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Caine -->
+
+    <owl:Class rdf:about="&animale-compoanie;Caine">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Carnivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Carnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Carnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_durataDeViata"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">16</xsd:maxInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">8</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&animale-compoanie;Pisica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Carnivor -->
+
+    <owl:Class rdf:about="&animale-compoanie;Carnivor">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Animal"/>
+        <owl:disjointWith rdf:resource="&animale-compoanie;Erbivor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#CentruAnimale -->
+
+    <owl:Class rdf:about="&animale-compoanie;CentruAnimale"/>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Concurs -->
+
+    <owl:Class rdf:about="&animale-compoanie;Concurs">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Eveniment"/>
+        <owl:disjointWith rdf:resource="&animale-compoanie;Expozitie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#DeApa -->
+
+    <owl:Class rdf:about="&animale-compoanie;DeApa">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Testoasa"/>
+        <owl:disjointWith rdf:resource="&animale-compoanie;DeUscat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#DeUscat -->
+
+    <owl:Class rdf:about="&animale-compoanie;DeUscat">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Testoasa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Erbivor -->
+
+    <owl:Class rdf:about="&animale-compoanie;Erbivor">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Eveniment -->
+
+    <owl:Class rdf:about="&animale-compoanie;Eveniment"/>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Expozitie -->
+
+    <owl:Class rdf:about="&animale-compoanie;Expozitie">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Eveniment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#FaraGluten -->
+
+    <owl:Class rdf:about="&animale-compoanie;FaraGluten">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#FaraGrasimi -->
+
+    <owl:Class rdf:about="&animale-compoanie;FaraGrasimi">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hamster -->
+
+    <owl:Class rdf:about="&animale-compoanie;Hamster">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Omnivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Omnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="&animale-compoanie;Testoasa"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hipoalergenica -->
+
+    <owl:Class rdf:about="&animale-compoanie;Hipoalergenica">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana -->
+
+    <owl:Class rdf:about="&animale-compoanie;Hrana">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&animale-compoanie;hrana_tipAmbalaj"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&animale-compoanie;hrana_aroma"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Iepure -->
+
+    <owl:Class rdf:about="&animale-compoanie;Iepure">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Erbivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Erbivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Ingredient -->
+
+    <owl:Class rdf:about="&animale-compoanie;Ingredient"/>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Magazin -->
+
+    <owl:Class rdf:about="&animale-compoanie;Magazin">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;CentruAnimale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Maimuta -->
+
+    <owl:Class rdf:about="&animale-compoanie;Maimuta">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Erbivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Erbivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">2</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#MediuDeViata -->
+
+    <owl:Class rdf:about="&animale-compoanie;MediuDeViata"/>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Omnivor -->
+
+    <owl:Class rdf:about="&animale-compoanie;Omnivor">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Papagal -->
+
+    <owl:Class rdf:about="&animale-compoanie;Papagal">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Erbivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Erbivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">2</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Peste -->
+
+    <owl:Class rdf:about="&animale-compoanie;Peste">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Erbivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Erbivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">0</owl:maxCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Pisica -->
+
+    <owl:Class rdf:about="&animale-compoanie;Pisica">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Carnivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Carnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Carnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_durataDeViata"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">8</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="&xsd;integer">22</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Reptila -->
+
+    <owl:Class rdf:about="&animale-compoanie;Reptila">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Erbivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Erbivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara -->
+
+    <owl:Class rdf:about="&animale-compoanie;Tara">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Romania"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Australia"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Siria"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Germania"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Birmania"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_China"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Thailanda"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Bahamas"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Canada"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Brazilia"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Belgia"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Rusia"/>
+                    <rdf:Description rdf:about="&animale-compoanie;Tara_Japonia"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Terestru -->
+
+    <owl:Class rdf:about="&animale-compoanie;Terestru">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;MediuDeViata"/>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Testoasa -->
+
+    <owl:Class rdf:about="&animale-compoanie;Testoasa">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Omnivor"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Omnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:allValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:oneOf>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </owl:oneOf>
+                            </rdfs:Datatype>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&animale-compoanie;Omnivor"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&animale-compoanie;animal_numarPicioare"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="&xsd;integer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Vegetariana -->
+
+    <owl:Class rdf:about="&animale-compoanie;Vegetariana">
+        <rdfs:subClassOf rdf:resource="&animale-compoanie;Hrana"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_AnimalLife -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_AnimalLife">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Florilor nr 56</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Hamster_Chinezesc"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Hamster_European"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_Animax -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_Animax">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>strada Unirii nr 4
+</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisica_Siameza"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Reptila_Anolisul"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Reptila_Gecko"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Reptila_Iguana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_AsociatiaHapi -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_AsociatiaHapi">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Principala nr 2</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Iepure_AlbastruVienez"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Iepure_MareleAlb"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Iepure_UriasulBelgian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_CutuCutu -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_CutuCutu">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Barbu Vacarescu nr 9</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Peste_Labirint"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Reptila_Iguana"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_PiataA-Z -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_PiataA-Z">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>Str. Virgil Fulicea, nr. 6</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Maimuta_Capucin"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Maimuta_Pigmeu"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Papagal_Nimfa"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Papagal_Perus"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Peste_Curcubeu"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Peste_Labirint"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Peste_Sanitar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Adapost_Zooland -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Adapost_Zooland">
+        <rdf:type rdf:resource="&animale-compoanie;Adapost"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Romana nr 46</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_AcvaticaEuropeana"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_CuTampleGalbene"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_Cumberland"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_DeUscatBanateana"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_DeUscatRuseasca"/>
+        <animale-compoanie:adaposteste rdf:resource="&animale-compoanie;Animal_Testoasa_Hermann"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Caine_CiobanescCarpatin -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Caine_CiobanescCarpatin">
+        <rdf:type rdf:resource="&animale-compoanie;Caine"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">1.0</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">14</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">50.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numeStiintific>Canis lupus familiaris</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_SelfiePet"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Romania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Caine_CiobanescGerman -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Caine_CiobanescGerman">
+        <rdf:type rdf:resource="&animale-compoanie;Caine"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">1.2</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">15</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">52.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numeStiintific>Canis lupus familiaris</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Concursoman"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Bio-Yarrah-Caine"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Germania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Caine_Labrador -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Caine_Labrador">
+        <rdf:type rdf:resource="&animale-compoanie;Caine"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">1.0</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">13</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">30.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_numeStiintific>Canis lupus familiaris</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:aCastigat rdf:resource="&animale-compoanie;Concurs_Concursoman"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Orijen-Caine"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Caine_Mops -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Caine_Mops">
+        <rdf:type rdf:resource="&animale-compoanie;Caine"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.8</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">20.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;integer">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">9</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numeStiintific>Canis lupus familiaris</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Orijen-Caine"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_China"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Caine_Pitbull -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Caine_Pitbull">
+        <rdf:type rdf:resource="&animale-compoanie;Caine"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.8</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">12</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">35.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Bio-Yarrah-Caine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Hamster_Chinezesc -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Hamster_Chinezesc">
+        <rdf:type rdf:resource="&animale-compoanie;Hamster"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.01</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">6</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_China"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Hamster_European -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Hamster_European">
+        <rdf:type rdf:resource="&animale-compoanie;Hamster"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.01</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">7</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Rusia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Hamster_Sirian -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Hamster_Sirian">
+        <rdf:type rdf:resource="&animale-compoanie;Hamster"/>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">8</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Siria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Iepure_AlbastruVienez -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Iepure_AlbastruVienez">
+        <rdf:type rdf:resource="&animale-compoanie;Iepure"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">1.5</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;integer">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">6</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Concursoman"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Bio-Iepure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Iepure_MareleAlb -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Iepure_MareleAlb">
+        <rdf:type rdf:resource="&animale-compoanie;Iepure"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">1.5</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">2.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">24</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;integer">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Gecko"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Iguana"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Concursoman"/>
+        <animale-compoanie:aCastigat rdf:resource="&animale-compoanie;Concurs_Zooland"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Zooland"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Germania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Iepure_UriasulBelgian -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Iepure_UriasulBelgian">
+        <rdf:type rdf:resource="&animale-compoanie;Iepure"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">1.0</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">13</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">2.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;integer">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Belgia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Maimuta_AfricanaLenesa -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Maimuta_AfricanaLenesa">
+        <rdf:type rdf:resource="&animale-compoanie;Maimuta"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">10</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">2</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">4.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Maimuta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Maimuta_Capucin -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Maimuta_Capucin">
+        <rdf:type rdf:resource="&animale-compoanie;Maimuta"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">15</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">2</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">2.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Anolisul"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_FaraGluten-Maimuta"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Maimuta_Pigmeu -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Maimuta_Pigmeu">
+        <rdf:type rdf:resource="&animale-compoanie;Maimuta"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.7</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">1.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">2</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">30</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Brazilia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Papagal_Nimfa -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Papagal_Nimfa">
+        <rdf:type rdf:resource="&animale-compoanie;Papagal"/>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.3</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.3</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">2</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">6</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numeStiintific>Psittaciformes</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Siameza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Australia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Papagal_Perus -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Papagal_Perus">
+        <rdf:type rdf:resource="&animale-compoanie;Papagal"/>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.2</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.2</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">2</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">20</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Australia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Peste_Curcubeu -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Peste_Curcubeu">
+        <rdf:type rdf:resource="&animale-compoanie;Peste"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.05</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.05</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">5</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Siameza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Vegetariana-Peste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Peste_Labirint -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Peste_Labirint">
+        <rdf:type rdf:resource="&animale-compoanie;Peste"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.02</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.05</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">4</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Sfinx"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Siameza"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Peste_Sanitar -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Peste_Sanitar">
+        <rdf:type rdf:resource="&animale-compoanie;Peste"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.02</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.03</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">25</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Testoasa_CuTampleGalbene"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Testoasa_Cumberland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Pisica_Birmaneza -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Pisica_Birmaneza">
+        <rdf:type rdf:resource="&animale-compoanie;Pisica"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.7</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">15</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">3.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_numeStiintific>Felis catus</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Anolisul"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Gecko"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Iguana"/>
+        <animale-compoanie:participaLaExpozitie rdf:resource="&animale-compoanie;Expozitie_SofistiCat"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Pisica"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Birmania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Pisica_Persana -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Pisica_Persana">
+        <rdf:type rdf:resource="&animale-compoanie;Pisica"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.7</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.7</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">21</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_numeStiintific>Felis catus</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:aCastigat rdf:resource="&animale-compoanie;Concurs_SelfiePet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Pisica_Sfinx -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Pisica_Sfinx">
+        <rdf:type rdf:resource="&animale-compoanie;Pisica"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.2</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">1.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">17</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_numeStiintific>Felis catus</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Pisica"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Canada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Pisica_Siameza -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Pisica_Siameza">
+        <rdf:type rdf:resource="&animale-compoanie;Pisica"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.4</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">2.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">20</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_numeStiintific>Felis catus</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Thailanda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Pisisca_Bengaleza -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Pisisca_Bengaleza">
+        <rdf:type rdf:resource="&animale-compoanie;Pisica"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.5</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">16</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">4.0</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numeStiintific>Felis catus</animale-compoanie:animal_numeStiintific>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_FaraGluten-Pisica"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Japonia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Reptila_Anolisul -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Reptila_Anolisul">
+        <rdf:type rdf:resource="&animale-compoanie;Reptila"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.02</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.2</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">15</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Reptila"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Bahamas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Reptila_Gecko -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Reptila_Gecko">
+        <rdf:type rdf:resource="&animale-compoanie;Reptila"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.3</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.3</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">9</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Maimuta_AfricanaLenesa"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Maimuta_Capucin"/>
+        <animale-compoanie:seHranesteCu rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Reptila"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Australia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Reptila_Iguana -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Reptila_Iguana">
+        <rdf:type rdf:resource="&animale-compoanie;Reptila"/>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">10</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_SelfiePet"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Australia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_AcvaticaEuropeana -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_AcvaticaEuropeana">
+        <rdf:type rdf:resource="&animale-compoanie;DeApa"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.3</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.4</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">4</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescCarpatin"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_CiobanescGerman"/>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Labrador"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Rusia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_CuTampleGalbene -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_CuTampleGalbene">
+        <rdf:type rdf:resource="&animale-compoanie;DeApa"/>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">5</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisisca_Bengaleza"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Zooland"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_Cumberland -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_Cumberland">
+        <rdf:type rdf:resource="&animale-compoanie;DeApa"/>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">15</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:traiesteInMediul rdf:resource="&animale-compoanie;MediuDeViata_Acvariu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_DeUscatBanateana -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_DeUscatBanateana">
+        <rdf:type rdf:resource="&animale-compoanie;DeUscat"/>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;integer">6</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Iepure_MareleAlb"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Zooland"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Romania"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_DeUscatRuseasca -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_DeUscatRuseasca">
+        <rdf:type rdf:resource="&animale-compoanie;DeUscat"/>
+        <animale-compoanie:animal_inaltimeMedie rdf:datatype="&xsd;float">0.2</animale-compoanie:animal_inaltimeMedie>
+        <animale-compoanie:animal_greutateMedie rdf:datatype="&xsd;float">0.4</animale-compoanie:animal_greutateMedie>
+        <animale-compoanie:animal_numarPicioare rdf:datatype="&xsd;int">4</animale-compoanie:animal_numarPicioare>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">7</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Reptila_Iguana"/>
+        <animale-compoanie:participaLaConcurs rdf:resource="&animale-compoanie;Concurs_Zooland"/>
+        <animale-compoanie:provineDin rdf:resource="&animale-compoanie;Tara_Rusia"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Animal_Testoasa_Hermann -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Animal_Testoasa_Hermann">
+        <rdf:type rdf:resource="&animale-compoanie;DeUscat"/>
+        <animale-compoanie:animal_durataDeViata rdf:datatype="&xsd;int">8</animale-compoanie:animal_durataDeViata>
+        <animale-compoanie:seTemeDe rdf:resource="&animale-compoanie;Animal_Pisica_Siameza"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Concurs_Concursoman -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Concurs_Concursoman">
+        <rdf:type rdf:resource="&animale-compoanie;Concurs"/>
+        <animale-compoanie:eveniment_data rdf:datatype="&xsd;dateTimeStamp">2019-05-20T14:00:00.000Z</animale-compoanie:eveniment_data>
+        <animale-compoanie:concurs_tip>Frumusete</animale-compoanie:concurs_tip>
+        <animale-compoanie:eveniment_locatie>Romexpo</animale-compoanie:eveniment_locatie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Concurs_SelfiePet -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Concurs_SelfiePet">
+        <rdf:type rdf:resource="&animale-compoanie;Concurs"/>
+        <animale-compoanie:eveniment_data rdf:datatype="&xsd;dateTimeStamp">2019-04-20T14:00:00.000Z</animale-compoanie:eveniment_data>
+        <animale-compoanie:eveniment_locatie>Ceainaria Aria</animale-compoanie:eveniment_locatie>
+        <animale-compoanie:concurs_tip>Abilitati</animale-compoanie:concurs_tip>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Concurs_Zooland -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Concurs_Zooland">
+        <rdf:type rdf:resource="&animale-compoanie;Concurs"/>
+        <animale-compoanie:eveniment_data rdf:datatype="&xsd;dateTimeStamp">2012-03-05T14:00:00.000Z</animale-compoanie:eveniment_data>
+        <animale-compoanie:concurs_tip>Dresaj</animale-compoanie:concurs_tip>
+        <animale-compoanie:eveniment_locatie>Ariel Cafe</animale-compoanie:eveniment_locatie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Expozitie_MiauMiau -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Expozitie_MiauMiau">
+        <rdf:type rdf:resource="&animale-compoanie;Expozitie"/>
+        <animale-compoanie:eveniment_data rdf:datatype="&xsd;dateTimeStamp">2018-04-28T14:00:00.000Z</animale-compoanie:eveniment_data>
+        <animale-compoanie:eveniment_locatie>Sufrageria cu jocuri</animale-compoanie:eveniment_locatie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Expozitie_SofistiCat -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Expozitie_SofistiCat">
+        <rdf:type rdf:resource="&animale-compoanie;Expozitie"/>
+        <animale-compoanie:eveniment_data rdf:datatype="&xsd;dateTimeStamp">2018-05-21T14:00:00.000Z</animale-compoanie:eveniment_data>
+        <animale-compoanie:eveniment_locatie>Romexpo</animale-compoanie:eveniment_locatie>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Bio-Iepure -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Bio-Iepure">
+        <rdf:type rdf:resource="&animale-compoanie;Bio"/>
+        <animale-compoanie:hrana_aroma>Cartofi</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Bio-Yarrah-Caine -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Bio-Yarrah-Caine">
+        <rdf:type rdf:resource="&animale-compoanie;Bio"/>
+        <animale-compoanie:hrana_aroma>Pasare</animale-compoanie:hrana_aroma>
+        <animale-compoanie:hrana_tipAmbalaj>Sac</animale-compoanie:hrana_tipAmbalaj>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_BogataInProteine-Orijen-Caine -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_BogataInProteine-Orijen-Caine">
+        <rdf:type rdf:resource="&animale-compoanie;BogataInProteine"/>
+        <animale-compoanie:hrana_tipAmbalaj>Sac</animale-compoanie:hrana_tipAmbalaj>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_BogataInProteine-Reptila -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_BogataInProteine-Reptila">
+        <rdf:type rdf:resource="&animale-compoanie;BogataInProteine"/>
+        <animale-compoanie:hrana_tipAmbalaj>Cutie</animale-compoanie:hrana_tipAmbalaj>
+        <animale-compoanie:hrana_aroma>Cereale</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_FaraGluten-Maimuta -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_FaraGluten-Maimuta">
+        <rdf:type rdf:resource="&animale-compoanie;FaraGluten"/>
+        <animale-compoanie:hrana_aroma>Bacon</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_FaraGluten-Pisica -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_FaraGluten-Pisica">
+        <rdf:type rdf:resource="&animale-compoanie;FaraGluten"/>
+        <animale-compoanie:hrana_tipAmbalaj>Plic</animale-compoanie:hrana_tipAmbalaj>
+        <animale-compoanie:hrana_aroma>Peste</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_FaraGrasimi-Hamster -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_FaraGrasimi-Hamster">
+        <rdf:type rdf:resource="&animale-compoanie;FaraGrasimi"/>
+        <animale-compoanie:hrana_aroma>Peste</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Hipoalergenica-Maimuta -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Hipoalergenica-Maimuta">
+        <rdf:type rdf:resource="&animale-compoanie;Hipoalergenica"/>
+        <animale-compoanie:hrana_aroma>Fructe</animale-compoanie:hrana_aroma>
+        <animale-compoanie:hrana_tipAmbalaj>Conserva</animale-compoanie:hrana_tipAmbalaj>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Hipoalergenica-Pisica -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Hipoalergenica-Pisica">
+        <rdf:type rdf:resource="&animale-compoanie;Hipoalergenica"/>
+        <animale-compoanie:hrana_aroma>Peste</animale-compoanie:hrana_aroma>
+        <animale-compoanie:hrana_tipAmbalaj>Conserva</animale-compoanie:hrana_tipAmbalaj>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Vegetariana-Caine -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Vegetariana-Caine">
+        <rdf:type rdf:resource="&animale-compoanie;Vegetariana"/>
+        <animale-compoanie:hrana_tipAmbalaj>Cutie</animale-compoanie:hrana_tipAmbalaj>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Hrana_Vegetariana-Peste -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Hrana_Vegetariana-Peste">
+        <rdf:type rdf:resource="&animale-compoanie;Vegetariana"/>
+        <animale-compoanie:hrana_tipAmbalaj>Plic</animale-compoanie:hrana_tipAmbalaj>
+        <animale-compoanie:hrana_aroma>Orez</animale-compoanie:hrana_aroma>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Ingredient_Orez -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Ingredient_Orez">
+        <rdf:type rdf:resource="&animale-compoanie;Ingredient"/>
+        <animale-compoanie:esteIngredientPentru rdf:resource="&animale-compoanie;Hrana_Vegetariana-Caine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Ingredient_Peste -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Ingredient_Peste">
+        <rdf:type rdf:resource="&animale-compoanie;Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Magazin_Animax -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Magazin_Animax">
+        <rdf:type rdf:resource="&animale-compoanie;Magazin"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Nadelor nr 3</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Caine_Mops"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Caine_Pitbull"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Hamster_Chinezesc"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Peste_Sanitar"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Pisica_Birmaneza"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Pisica_Persana"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Bio-Iepure"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Bio-Yarrah-Caine"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Orijen-Caine"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Reptila"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_FaraGluten-Pisica"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_FaraGrasimi-Hamster"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Pisica"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Vegetariana-Caine"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Vegetariana-Peste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Magazin_Happy-Pet -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Magazin_Happy-Pet">
+        <rdf:type rdf:resource="&animale-compoanie;Magazin"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Solarilor nr 2</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Papagal_Nimfa"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Papagal_Perus"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Peste_Curcubeu"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Peste_Labirint"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Peste_Sanitar"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_FaraGluten-Pisica"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Pisica"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Vegetariana-Peste"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Magazin_Zoofast -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Magazin_Zoofast">
+        <rdf:type rdf:resource="&animale-compoanie;Magazin"/>
+        <animale-compoanie:centruAnimale_adresa>Strada Floriilor nr 92</animale-compoanie:centruAnimale_adresa>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Iepure_AlbastruVienez"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Iepure_MareleAlb"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Iepure_UriasulBelgian"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Maimuta_AfricanaLenesa"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Maimuta_Capucin"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Animal_Maimuta_Pigmeu"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Bio-Iepure"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Orijen-Caine"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_BogataInProteine-Reptila"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_FaraGrasimi-Hamster"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Hipoalergenica-Maimuta"/>
+        <animale-compoanie:vinde rdf:resource="&animale-compoanie;Hrana_Vegetariana-Caine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#MediuDeViata_Acvariu -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;MediuDeViata_Acvariu">
+        <rdf:type rdf:resource="&animale-compoanie;Acvatic"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#MediuDeViata_Colivie -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;MediuDeViata_Colivie">
+        <rdf:type rdf:resource="&animale-compoanie;Aerian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#MediuDeViata_Cusca -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;MediuDeViata_Cusca">
+        <rdf:type rdf:resource="&animale-compoanie;Terestru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#MediuDeViata_Locuinta -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;MediuDeViata_Locuinta">
+        <rdf:type rdf:resource="&animale-compoanie;Terestru"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Australia -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Australia">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Bahamas -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Bahamas">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Belgia -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Belgia">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Birmania -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Birmania">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Brazilia -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Brazilia">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Canada -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Canada">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_China -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_China">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Germania -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Germania">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Japonia -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Japonia">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Romania -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Romania">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Rusia -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Rusia">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Siria -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Siria">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:8080/openrdf-workbench/repositories/animale-compoanie.owl#Tara_Thailanda -->
+
+    <owl:NamedIndividual rdf:about="&animale-compoanie;Tara_Thailanda">
+        <rdf:type rdf:resource="&animale-compoanie;Tara"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&animale-compoanie;Bio"/>
+            <rdf:Description rdf:about="&animale-compoanie;BogataInProteine"/>
+            <rdf:Description rdf:about="&animale-compoanie;FaraGluten"/>
+            <rdf:Description rdf:about="&animale-compoanie;FaraGrasimi"/>
+            <rdf:Description rdf:about="&animale-compoanie;Hipoalergenica"/>
+            <rdf:Description rdf:about="&animale-compoanie;Vegetariana"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&animale-compoanie;Iepure"/>
+            <rdf:Description rdf:about="&animale-compoanie;Maimuta"/>
+            <rdf:Description rdf:about="&animale-compoanie;Papagal"/>
+            <rdf:Description rdf:about="&animale-compoanie;Peste"/>
+            <rdf:Description rdf:about="&animale-compoanie;Reptila"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&animale-compoanie;Acvatic"/>
+            <rdf:Description rdf:about="&animale-compoanie;Aerian"/>
+            <rdf:Description rdf:about="&animale-compoanie;Terestru"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

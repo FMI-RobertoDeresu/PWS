@@ -1,0 +1,21 @@
+Animal and seHranesteCu some (Hrana and hrana_aroma value "Peste")
+
+Animal and esteAdapostitIn some {Adapost_Animax}
+
+Animal and participaLa some (Eveniment and {Expozitie_SofistiCat})
+
+Animal and aCastigat some (Concurs and {Concurs_Concursoman})
+
+Animal and seHranesteCu some (Hrana and {Hrana_Vegetariana-Caine,Hrana_FaraGluten-Maimuta})
+
+Eveniment and eveniment_locatie value "Romexpo" and gazduieste some Pisica
+
+CentruAnimale and (adaposteste some (Animal and seHranesteCu some FaraGluten) or vinde some (Animal and seHranesteCu some FaraGluten))
+
+Iepure and (participaLaConcurs some Concurs and aCastigat some Concurs)
+
+Ierbivor and numarPicioare value 4
+
+Animal and participaLa min 2 Concurs
+
+Animal and animal_durataDeViata some integer[>=9, <= 10] 
